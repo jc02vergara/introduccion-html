@@ -35,7 +35,8 @@ introduccion-html/
 
 ## Repositorio
 
-https://github.com/jc02vergara/introduccion-html
+- Código fuente: https://github.com/jc02vergara/introduccion-html
+- Página publicada (GitHub Pages): https://jc02vergara.github.io/introduccion-html/
 
 ## Autor
 
