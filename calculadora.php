@@ -66,68 +66,75 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         .calc-form { display: flex; flex-direction: column; gap: 14px; }
         .calc-form label {
             color: var(--accent);
-            font-size: 16px;
+            font-size: 13px;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .calc-form input,
         .calc-form select {
-            background: #020602;
-            color: var(--fg-bright);
+            background: var(--bg-elev);
+            color: var(--text);
             border: 1px solid var(--border);
-            padding: 10px 12px;
-            font-family: 'Share Tech Mono', monospace;
+            padding: 12px 14px;
+            font-family: 'Inter', sans-serif;
             font-size: 16px;
+            border-radius: var(--radius-sm);
             outline: none;
-            transition: border-color 0.15s, box-shadow 0.15s;
+            transition: border-color .15s, box-shadow .15s;
         }
         .calc-form input:focus,
         .calc-form select:focus {
-            border-color: var(--fg);
-            box-shadow: var(--glow);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
         }
         .calc-form button {
-            background: transparent;
-            color: var(--fg-bright);
-            border: 1px solid var(--fg);
-            padding: 12px;
-            font-family: 'VT323', monospace;
-            font-size: 22px;
-            letter-spacing: 2px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 13px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: var(--radius-sm);
             cursor: pointer;
-            text-shadow: var(--glow);
-            transition: background 0.15s, color 0.15s;
+            transition: background .15s, transform .1s;
         }
         .calc-form button:hover {
-            background: var(--fg);
-            color: var(--bg);
-            text-shadow: none;
+            background: var(--accent-soft);
+            transform: translateY(-1px);
         }
         .resultado {
             margin-top: 18px;
-            padding: 14px;
-            border: 1px solid var(--fg);
-            background: rgba(51,255,102,0.06);
-            color: var(--fg-bright);
-            font-size: 20px;
+            padding: 16px;
+            border: 1px solid var(--accent);
+            background: rgba(245,166,35,0.08);
+            color: var(--accent-soft);
+            font-size: 22px;
             text-align: center;
-            text-shadow: var(--glow);
-            font-family: 'VT323', monospace;
-            letter-spacing: 1px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
         }
         .error {
             margin-top: 18px;
             padding: 14px;
-            border: 1px solid var(--danger);
-            background: rgba(255,85,85,0.06);
-            color: var(--danger);
+            border: 1px solid #ff5555;
+            background: rgba(255,85,85,0.08);
+            color: #ff7a7a;
             text-align: center;
-            font-size: 16px;
+            font-size: 14px;
+            border-radius: var(--radius-sm);
+            font-family: 'JetBrains Mono', monospace;
         }
         .volver {
             display: inline-block;
             margin-top: 18px;
-            color: var(--fg-dim);
+            color: var(--text-dim);
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
+            font-family: 'JetBrains Mono', monospace;
         }
         .volver:hover { color: var(--accent); }
         .volver::before { content: '< '; }
@@ -137,18 +144,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="scanlines"></div>
 
     <div class="terminal">
-        <header class="boot">
-            <div class="boot-lines">
-                <p><span class="prompt">></span> LOADING calculadora.php ... <span class="ok">[OK]</span></p>
-                <p><span class="prompt">></span> MODE: php arithmetic engine</p>
-                <p><span class="prompt">></span> STATUS: <span class="blink">READY</span></p>
+        <header class="topbar">
+            <div class="topbar-inner">
+                <a href="index.html" class="brand">
+                    <span class="brand-prompt">jean@vergara:~$</span>
+                    <span class="brand-name">calculadora.php</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html">home</a>
+                    <a href="calculadora.php" class="nav-cta">calc.php</a>
+                </nav>
             </div>
         </header>
-
-        <nav class="nav">
-            <a href="index.html">home</a>
-            <a href="calculadora.php">calc.php</a>
-        </nav>
 
         <main>
             <section class="panel">
