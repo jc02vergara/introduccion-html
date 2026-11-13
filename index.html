@@ -3,70 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página web personal con HTML, CSS y PHP">
-    <title>Mi Página Personal</title>
+    <meta name="description" content="Currículum y portafolio de Jean Carlo Vergara - Ingeniero Ambiental y Desarrollador">
+    <title>jean@vergara:~$ portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="calculadora.php">Calculadora</a></li>
-            </ul>
+    <div class="scanlines"></div>
+
+    <div class="terminal">
+        <header class="boot">
+            <pre class="ascii">   ██╗   ██╗███████╗██████╗  ██████╗  █████╗ ██████╗  █████╗
+   ██║   ██║██╔════╝██╔══██╗██╔════╝ ██╔══██╗██╔══██╗██╔══██╗
+   ██║   ██║█████╗  ██████╔╝██║  ███╗███████║██████╔╝███████║
+   ╚██╗ ██╔╝██╔══╝  ██╔══██╗██║   ██║██╔══██║██╔══██╗██╔══██║
+    ╚████╔╝ ███████╗██║  ██║╚██████╔╝██║  ██║██║  ██║██║  ██║
+     ╚═══╝  ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝</pre>
+            <div class="boot-lines">
+                <p><span class="prompt">></span> INITIALIZING PORTFOLIO v2.0 ... <span class="ok">[OK]</span></p>
+                <p><span class="prompt">></span> USER: jean.carlo.vergara</p>
+                <p><span class="prompt">></span> ROLE: ingeniero_ambiental + desarrollador_sig</p>
+                <p><span class="prompt">></span> LOCATION: quito, ecuador (reubicable)</p>
+                <p><span class="prompt">></span> STATUS: <span class="blink">ONLINE</span> <span class="cursor">_</span></p>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="#about">about</a>
+            <a href="#skills">skills</a>
+            <a href="#experience">experience</a>
+            <a href="#education">education</a>
+            <a href="#certs">certs</a>
+            <a href="#contact">contact</a>
+            <a href="calculadora.php">calc.php</a>
         </nav>
-    </header>
 
-    <main>
-        <section id="inicio" class="hero">
-            <h1>¡Hola! Soy Estudiante</h1>
-            <p>Bienvenido a mi página web personal creada con HTML y CSS.</p>
-            <p>Esta página es parte de la tarea de introducción a HTML.</p>
-        </section>
-
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <div class="card">
-                <p>
-                    Soy un estudiante apasionado por la tecnología y el desarrollo web.
-                    En esta página comparto un poco sobre mí y mis habilidades.
+        <main>
+            <section id="about" class="panel">
+                <span class="panel-title">[ about.txt ]</span>
+                <h1>Jean Carlo Vergara</h1>
+                <p class="title">Ingeniero Ambiental | Especialista en SIG (GIS) &amp; Modelación Hidrológica | Desarrollo de Software aplicado a Gestión Ambiental</p>
+                <p class="summary">
+                    Ingeniero Ambiental orientado a resultados, con experiencia en seguimiento y control ambiental de proyectos de infraestructura, certificaciones de sostenibilidad y gestión de riesgos de desastre. Asumo la responsabilidad ambiental en obra de principio a fin: cumplimiento normativo y del Plan de Manejo Ambiental, gestión de residuos, relacionamiento comunitario y capacitación de equipos de trabajo. Mi dominio de Sistemas de Información Geográfica (SIG) y modelación hidrológica me permite convertir los datos de campo en mapas, diagnósticos y decisiones técnicas sólidas. Formador certificado y con habilidades en desarrollo de software, aporto una visión integral que une el trabajo de campo, el análisis técnico y la innovación digital para que cada proyecto avance de forma eficiente, responsable y sostenible.
                 </p>
-                <ul>
-                    <li><strong>Nombre:</strong> Estudiante de Programación</li>
-                    <li><strong>Carrera:</strong> Desarrollo de Software</li>
-                    <li><strong>Intereses:</strong> HTML, CSS, PHP, JavaScript</li>
+            </section>
+
+            <section id="skills" class="panel">
+                <span class="panel-title">[ skills.cfg ]</span>
+                <h2>Áreas de Experiencia y Herramientas</h2>
+                <div class="skills">
+                    <div class="skill-block">
+                        <h3>&gt; medio_ambiente &amp; gestion</h3>
+                        <p>Planes de Manejo Ambiental (PMA), Evaluación de Impacto Ambiental (EIA), Gestión de Riesgos de Desastre, Seguridad y Salud Ocupacional (SSO), Gestión de Residuos, TULSMA / ISO 14001.</p>
+                    </div>
+                    <div class="skill-block">
+                        <h3>&gt; sig (gis)</h3>
+                        <p>ArcGIS, QGIS, Google Earth Engine, HEC-RAS, Modelización Espacial (Geospatial Analysis).</p>
+                    </div>
+                    <div class="skill-block">
+                        <h3>&gt; desarrollo_software (full_stack)</h3>
+                        <p>JavaScript, React, Node.js, Express, Python, Django, PHP. Web GIS.</p>
+                    </div>
+                    <div class="skill-block">
+                        <h3>&gt; gestion_de_datos</h3>
+                        <p>SQL (MySQL, PostgreSQL), Diseño de Bases de Datos, Migración de Datos Históricos.</p>
+                    </div>
+                    <div class="skill-block full">
+                        <h3>&gt; idiomas</h3>
+                        <p>Español: Nativo | Inglés: B1/B2</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="panel">
+                <span class="panel-title">[ experience.log ]</span>
+                <h2>Experiencia Laboral</h2>
+
+                <article class="job">
+                    <div class="job-head">
+                        <span class="job-title">Residente Ambiental</span>
+                        <span class="job-company">@ Consorcio Red Pujilí</span>
+                        <span class="job-date">[Ago 2026 – Feb 2027]</span>
+                    </div>
+                    <ul>
+                        <li><strong>Contrato:</strong> Construcción de redes de distribución eléctrica y alumbrado público en los cantones Latacunga y Pujilí (Cotopaxi), para ELEPCO.</li>
+                        <li><strong>Control Ambiental en Campo:</strong> Supervisión del cumplimiento del Plan de Manejo Ambiental durante la ejecución de obra.</li>
+                        <li><strong>Gestión de Residuos:</strong> Control de clasificación, almacenamiento temporal y disposición final de residuos generados en obra.</li>
+                        <li><strong>Gestión Social y Capacitaciones:</strong> Relacionamiento comunitario y capacitación al personal de obra en temas ambientales y de seguridad.</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <span class="job-title">Técnico de Campo Ambiental</span>
+                        <span class="job-company">@ Ceragric S.A.S.</span>
+                        <span class="job-date">[Oct 2026 – Dic 2026]</span>
+                    </div>
+                    <ul>
+                        <li><strong>Levantamiento de Datos en Campo:</strong> Toma de coordenadas georreferenciadas (GPS) y recopilación de información técnica en fincas.</li>
+                        <li><strong>Certificación Rainforest Alliance:</strong> Verificación del cumplimiento de criterios ambientales y sociales del estándar de agricultura sostenible.</li>
+                        <li><strong>Documentación Técnica:</strong> Registro de evidencias y elaboración de reportes de campo.</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <span class="job-title">Capacitador Técnico</span>
+                        <span class="job-company">@ Tabacalera Bautista Llenas (Tabacall S.A.)</span>
+                        <span class="job-date">[2025 · 6 meses]</span>
+                    </div>
+                    <ul>
+                        <li>Instruí y certifiqué al personal operativo en protocolos de seguridad, prevención de riesgos laborales y manejo adecuado de insumos agroquímicos.</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <span class="job-title">Ingeniero Ambiental y Desarrollador Especializado en SIG</span>
+                        <span class="job-company">@ Cuerpo de Bomberos de Quinsaloma</span>
+                        <span class="job-date">[Ene 2022 – 2025]</span>
+                    </div>
+                    <ul>
+                        <li><strong>Modelización Espacial (SIG) y Gestión de Riesgos:</strong> Estudios hidrológicos con HEC-RAS para cartografía y evaluación de vulnerabilidad por inundación en 40 ha (barrios Las Palmitas y 12 de Octubre).</li>
+                        <li><strong>Desarrollo de Sistemas Core:</strong> Diseñé e implementé el Sistema de Permisos de Funcionamiento (SPF) y el Sistema Integrado de Registro de Emergencias (SIRE), en uso activo por 5 funcionarios.</li>
+                        <li><strong>Administración de Bases de Datos:</strong> Migración y depuración de bases relacionales con más de 1,000 registros históricos acumulados en 4 años.</li>
+                        <li><strong>Gestión Web y Administrativa:</strong> Desarrollé el portal web institucional para transparencia ciudadana y modernicé el archivo institucional.</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <span class="job-title">Desarrollador Web (freelance)</span>
+                        <span class="job-company">@ Cuerpo de Bomberos Puebloviejo</span>
+                        <span class="job-date">[2022 · 6 meses]</span>
+                    </div>
+                    <ul>
+                        <li>Desarrollé la arquitectura y el frontend/backend del primer portal institucional de la entidad.</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <span class="job-title">Docente</span>
+                        <span class="job-company">@ Escuela Mixta Particular "23 de Junio"</span>
+                        <span class="job-date">[~2 años]</span>
+                    </div>
+                    <ul>
+                        <li>Impartí clases y apoyé la formación de estudiantes de educación básica, desarrollando habilidades de planificación pedagógica, comunicación y manejo de grupos.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section id="education" class="panel">
+                <span class="panel-title">[ education.db ]</span>
+                <h2>Educación y Formación Continua</h2>
+                <div class="edu">
+                    <div>
+                        <span class="edu-degree">Ingeniería en Software</span>
+                        <span class="edu-school">Universidad Regional Autónoma de los Andes (Uniandes) — En curso (Virtual)</span>
+                    </div>
+                </div>
+                <div class="edu">
+                    <div>
+                        <span class="edu-degree">Ingeniería Ambiental</span>
+                        <span class="edu-school">Universidad Técnica Estatal de Quevedo — Graduado 2025</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certs" class="panel">
+                <span class="panel-title">[ certs.list ]</span>
+                <h2>Certificaciones y Formación Complementaria</h2>
+                <ul class="certs">
+                    <li>Formación de Formadores — Capacitador Independiente Calificado (Ministerio del Trabajo, Ecuador) (40h, 2026)</li>
+                    <li>Cambio Climático utilizando SIG — UTEQ / Capítulo Técnico IEEE TEMS (40h, 2026)</li>
+                    <li>Webinar: Data Center Industrial de Siemens (SIMATIC IADC) — IST Politécnica del Ecuador (3h, 2026)</li>
+                    <li>Webinar: Ciudades más Seguras — IST Politécnica del Ecuador (3h, 2026)</li>
+                    <li>Buenas Prácticas Ambientales — MAEduca (20h, 2026)</li>
+                    <li>Generación de Ideas de Negocio — Ministerio del Trabajo, Ecuador (2h, 2026)</li>
+                    <li>Gestión Inteligente de Residuos Peligrosos — IST Politécnica del Ecuador</li>
+                    <li>Inglés Básico Conversacional Nivel A1 — Fundación Social Perea / SENESCYT (120h, 2025)</li>
+                    <li>Introduction to Radioactive Sources and Their Applications — IAEA (2025)</li>
+                    <li>F-MACOE — IFRC / USAID (8h, 2025)</li>
+                    <li>Introducción al Sistema de Comando de Incidentes (SCI) — SENAPRED, Chile (20h, 2025)</li>
+                    <li>Evaluación Inicial de Necesidades por Eventos Peligrosos — SNGR Ecuador (5h, 2025)</li>
+                    <li>Facilitador — Proyecto de Vinculación "Resiliencia al Cambio Climático en Zonas Urbanas y Rurales" — UTEQ (96h, 2024)</li>
                 </ul>
-            </div>
-        </section>
+            </section>
 
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <div class="skills">
-                <div class="skill">HTML5</div>
-                <div class="skill">CSS3</div>
-                <div class="skill">PHP</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">Git / GitHub</div>
-            </div>
-        </section>
+            <section id="contact" class="panel">
+                <span class="panel-title">[ contact.sh ]</span>
+                <h2>Contacto</h2>
+                <div class="contact">
+                    <p><span class="key">ubicacion:</span> Quito, Ecuador (disponibilidad de reubicación)</p>
+                    <p><span class="key">telefono:</span> +593 98 362 5121</p>
+                    <p><span class="key">email:</span> <a href="mailto:jvergarariquero@gmail.com">jvergarariquero@gmail.com</a></p>
+                    <p><span class="key">portafolio:</span> <a href="https://byjean.page.gd" target="_blank">byjean.page.gd</a></p>
+                    <p><span class="key">github:</span> <a href="https://github.com/jc02vergara" target="_blank">github.com/jc02vergara</a></p>
+                    <p><span class="key">linkedin:</span> <a href="https://www.linkedin.com/in/jc2vergara/" target="_blank">linkedin.com/in/jc2vergara</a></p>
+                </div>
+                <p class="hint">&gt; ¿Necesitas calcular algo? ejecuta <a href="calculadora.php">./calculadora.php</a></p>
+            </section>
+        </main>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <div class="card">
-                <p>Puedes contactarme a través de los siguientes medios:</p>
-                <ul>
-                    <li>Correo: estudiante@ejemplo.com</li>
-                    <li>GitHub: github.com/estudiante</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Página Web Personal. Tarea: Introducción a HTML.</p>
-    </footer>
+        <footer>
+            <p>jean@vergara:~$ <span class="blink">_</span> &nbsp;|&nbsp; © 2026 Jean Carlo Vergara &nbsp;|&nbsp; built with html + css + php</p>
+        </footer>
+    </div>
 </body>
 </html>
