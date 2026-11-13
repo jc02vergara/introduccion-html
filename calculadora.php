@@ -56,130 +56,98 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculadora.php | jean@vergara</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>calculadora.php | Y2K Desktop</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .calc-wrap { max-width: 520px; margin: 0 auto; }
-        .calc-form { display: flex; flex-direction: column; gap: 14px; }
-        .calc-form label {
-            color: var(--accent);
-            font-size: 13px;
-            font-family: 'JetBrains Mono', monospace;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .calc-wrap { max-width: 420px; margin: 0 auto; }
+        .calc-form { display: flex; flex-direction: column; gap: 10px; }
+        .calc-form label { font-size: 11px; font-weight: bold; margin-bottom: 2px; display: block; }
         .calc-form input,
         .calc-form select {
-            background: var(--bg-elev);
-            color: var(--text);
-            border: 1px solid var(--border);
-            padding: 12px 14px;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            border-radius: var(--radius-sm);
-            outline: none;
-            transition: border-color .15s, box-shadow .15s;
-        }
-        .calc-form input:focus,
-        .calc-form select:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px var(--accent-glow);
+            width: 100%;
+            background: #fff;
+            color: #000;
+            border: 1px solid #000;
+            padding: 4px 6px;
+            font-family: Tahoma, Verdana, sans-serif;
+            font-size: 12px;
+            box-shadow: inset 1px 1px 0 #808080;
         }
         .calc-form button {
-            background: var(--accent);
-            color: var(--bg);
-            border: none;
-            padding: 13px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            border-radius: var(--radius-sm);
+            background: #c0c0c0;
+            color: #000;
+            border: 1px solid #000;
+            padding: 4px 12px;
+            font-size: 12px;
             cursor: pointer;
-            transition: background .15s, transform .1s;
+            box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+            font-family: Tahoma, sans-serif;
+            margin-top: 4px;
         }
-        .calc-form button:hover {
-            background: var(--accent-soft);
-            transform: translateY(-1px);
-        }
+        .calc-form button:hover { background: #e0e0e0; }
         .resultado {
-            margin-top: 18px;
-            padding: 16px;
-            border: 1px solid var(--accent);
-            background: rgba(245,166,35,0.08);
-            color: var(--accent-soft);
-            font-size: 22px;
+            margin-top: 12px;
+            padding: 8px;
+            border: 1px solid #000;
+            background: #ffffcc;
+            color: #000;
+            font-size: 16px;
             text-align: center;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            border-radius: var(--radius-sm);
+            font-weight: bold;
         }
         .error {
-            margin-top: 18px;
-            padding: 14px;
-            border: 1px solid #ff5555;
-            background: rgba(255,85,85,0.08);
-            color: #ff7a7a;
+            margin-top: 12px;
+            padding: 8px;
+            border: 1px solid #cc0000;
+            background: #ffcccc;
+            color: #cc0000;
             text-align: center;
-            font-size: 14px;
-            border-radius: var(--radius-sm);
-            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
         }
         .volver {
             display: inline-block;
-            margin-top: 18px;
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 14px;
-            font-family: 'JetBrains Mono', monospace;
+            margin-top: 12px;
+            color: #0000cc;
+            text-decoration: underline;
+            font-size: 11px;
         }
-        .volver:hover { color: var(--accent); }
-        .volver::before { content: '< '; }
     </style>
 </head>
 <body>
-    <div class="scanlines"></div>
-
-    <div class="terminal">
-        <header class="topbar">
-            <div class="topbar-inner">
-                <a href="index.html" class="brand">
-                    <span class="brand-prompt">jean@vergara:~$</span>
-                    <span class="brand-name">calculadora.php</span>
-                </a>
-                <nav class="nav">
-                    <a href="index.html">home</a>
-                    <a href="calculadora.php" class="nav-cta">calc.php</a>
-                </nav>
+    <div class="desktop" style="grid-template-columns: 1fr; max-width: 520px;">
+        <section class="win win-mint">
+            <div class="titlebar">
+                <span class="title">calculadora.php</span>
+                <div class="controls">
+                    <button type="button">_</button>
+                    <button type="button">□</button>
+                    <button type="button">×</button>
+                </div>
             </div>
-        </header>
-
-        <main>
-            <section class="panel">
-                <span class="panel-title">[ calc.php ]</span>
+            <div class="win-body">
                 <h1>Calculadora</h1>
-                <p class="title">operaciones básicas: suma, resta, multiplicación, división</p>
+                <p class="small">operaciones básicas: suma, resta, multiplicación, división</p>
 
                 <div class="calc-wrap">
                     <form class="calc-form" method="POST" action="calculadora.php">
-                        <label for="num1">&gt; primer número:</label>
-                        <input type="text" id="num1" name="num1" value="<?php echo htmlspecialchars($num1); ?>" required autofocus>
-
-                        <label for="operacion">&gt; operación:</label>
-                        <select id="operacion" name="operacion" required>
-                            <option value="suma" <?php if ($operacion === "suma") echo "selected"; ?>>suma (+)</option>
-                            <option value="resta" <?php if ($operacion === "resta") echo "selected"; ?>>resta (-)</option>
-                            <option value="multiplicacion" <?php if ($operacion === "multiplicacion") echo "selected"; ?>>multiplicación (*)</option>
-                            <option value="division" <?php if ($operacion === "division") echo "selected"; ?>>división (/)</option>
-                        </select>
-
-                        <label for="num2">&gt; segundo número:</label>
-                        <input type="text" id="num2" name="num2" value="<?php echo htmlspecialchars($num2); ?>" required>
-
-                        <button type="submit">[ EJECUTAR ]</button>
+                        <div>
+                            <label for="num1">primer número:</label>
+                            <input type="text" id="num1" name="num1" value="<?php echo htmlspecialchars($num1); ?>" required autofocus>
+                        </div>
+                        <div>
+                            <label for="operacion">operación:</label>
+                            <select id="operacion" name="operacion" required>
+                                <option value="suma" <?php if ($operacion === "suma") echo "selected"; ?>>suma (+)</option>
+                                <option value="resta" <?php if ($operacion === "resta") echo "selected"; ?>>resta (-)</option>
+                                <option value="multiplicacion" <?php if ($operacion === "multiplicacion") echo "selected"; ?>>multiplicación (*)</option>
+                                <option value="division" <?php if ($operacion === "division") echo "selected"; ?>>división (/)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="num2">segundo número:</label>
+                            <input type="text" id="num2" name="num2" value="<?php echo htmlspecialchars($num2); ?>" required>
+                        </div>
+                        <button type="submit">[ ejecutar ]</button>
                     </form>
 
                     <?php if ($mensaje !== ""): ?>
@@ -191,13 +159,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <?php endif; ?>
                 </div>
 
-                <a class="volver" href="index.html">volver a home</a>
-            </section>
-        </main>
-
-        <footer>
-            <p>jean@vergara:~$ <span class="blink">_</span> &nbsp;|&nbsp; calculadora.php &nbsp;|&nbsp; php arithmetic engine</p>
-        </footer>
+                <p class="hint"><a href="index.html">← volver al escritorio</a></p>
+            </div>
+        </section>
     </div>
+
+    <footer class="taskbar">
+        <button class="start-btn"> ( ) Inicio</button>
+        <span class="taskbar-text">calculadora.php — Y2K Desktop</span>
+        <span class="clock">12:00</span>
+    </footer>
 </body>
 </html>
