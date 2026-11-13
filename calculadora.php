@@ -9,6 +9,7 @@ $mensaje = "";
 $operacion = "";
 $num1 = "";
 $num2 = "";
+$op_symbol = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $num1 = isset($_POST["num1"]) ? trim($_POST["num1"]) : "";
